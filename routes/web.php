@@ -31,6 +31,7 @@ Route::post('/login', [MainController::class, 'login'])->name('login');
  */
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     Route::get('/', [DashboardController::class, 'main'])->name('dashboard');
+    Route::get('/mes-revenus', [DashboardController::class, 'revenus'])->name('revenus');
 });
 
 

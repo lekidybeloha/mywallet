@@ -45,7 +45,47 @@
                     <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
-
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-money-box"></i> <span>Mes revenus</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-shopping-cart"></i> <span>Mes dépenses</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-shopping-cart-add"></i> <span>Mes approvisionnements</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-shopping-cart-add"></i> <span>Mes sources de revenu</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-view-agenda"></i> <span>Mes projets</span>
+                </a>
+            </li>
+            <li class="sidebar-header">Statistiques</li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-shopping-cart"></i> <span>Dépenses</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-money-box"></i> <span>Revenus</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('revenus') }}">
+                    <i class="zmdi zmdi-view-agenda"></i> <span>Projections</span>
+                </a>
+            </li>
         </ul>
 
     </div>
