@@ -4,9 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import Vue from 'vue'
 require('./bootstrap');
-
-window.Vue = require('vue').default;
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,3 +29,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+//Form validation on register
+let form = document.getElementById('registration');
+if(form){
+    form.addEventListener('submit', (e) =>  {
+        let pass    = document.getElementById('password');
+        let confirm = document.getElementById('password_confirm');
+        if(pass.value !== confirm.value){
+            e.preventDefault();
+            e.stopPropagation();
+            document.getElementById('show-error').style.display = 'block';
+            confirm.classList.add('is-invalid');
+            return false;
+        }
+    });
+}
+

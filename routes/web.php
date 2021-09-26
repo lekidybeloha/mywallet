@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('welcome');
+
+Route::get('/register', function () {
+    return view('register');
 });
+
+Route::post('/register', [MainController::class, 'register'])->name('register');
+Route::post('/login', [MainController::class, 'login'])->name('login');
+
+/**
+ * Dashboard routes
+ */
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
+    Route::get('/', [DashboardController::class, 'main'])->name('dashboard');
+});
+
+

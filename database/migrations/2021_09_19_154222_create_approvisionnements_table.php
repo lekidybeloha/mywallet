@@ -15,6 +15,9 @@ class CreateApprovisionnementsTable extends Migration
     {
         Schema::create('approvisionnements', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->text('description')->nullable();
+            $table->float('montant');
             $table->timestamps();
         });
     }

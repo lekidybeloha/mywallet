@@ -13,8 +13,14 @@ class CreateMouvementsTable extends Migration
      */
     public function up()
     {
+        /**
+         * Mouvement source : 1- Revenu, 2- Dépense
+         */
         Schema::create('mouvements', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_user');
+            $table->integer('source');
+            $table->float('montant');
             $table->timestamps();
         });
     }
