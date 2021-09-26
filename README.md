@@ -8,3 +8,8 @@ Vous pouvez ainsi voir, projeter et améliorer la gestion de votre porte-monnaie
 - Laravel 8
 - Vue
 - PostgreSQL
+
+## Stack
+- Bootstrap
+- <a href='https://pngtree.com/so/Orange'>Orange png from pngtree.com/</a> for logo
+- Design : “Dashtreme” by “CODERVENT” v2.2.3

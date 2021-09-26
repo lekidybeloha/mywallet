@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function totals()
+    {
+        return $this->hasOne(Total::class, 'id_user', 'id');
+    }
 }

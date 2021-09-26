@@ -15,6 +15,11 @@ class CreateRevenusTable extends Migration
     {
         Schema::create('revenus', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->text('description')->nullable();
+            $table->float('montant');
+            $table->integer('date_appro');
+            $table->integer('id_source');
             $table->timestamps();
         });
     }
