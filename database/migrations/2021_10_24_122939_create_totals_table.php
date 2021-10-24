@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjetsTable extends Migration
+class CreateTotalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateProjetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projets', function (Blueprint $table) {
+        Schema::create('totals', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
-            $table->string('nom');
-            $table->text('description')->nullable();
             $table->float('montant');
-            $table->integer('period');
-            $table->float('pourcentage');
+            $table->float('depense');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateProjetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projets');
+        Schema::dropIfExists('totals');
     }
 }

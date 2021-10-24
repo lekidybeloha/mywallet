@@ -7,7 +7,9 @@ Vous pouvez ainsi voir, projeter et améliorer la gestion de votre porte-monnaie
 ## Technologies
 - Laravel 8
 - Vue
-- PostgreSQL
+- jQuery
+- MySQL
+
 
 ## Stack
 - Bootstrap

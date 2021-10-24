@@ -13,22 +13,23 @@ class MainController extends Controller
     //
     public function register(Request $verb)
     {
-        $data           = $verb->except(['_token', 'password_confirm']);
-        $check          = User::where('email', '=', $data['email'])->first();
+        $data               = $verb->except(['_token', 'password_confirm']);
+        $check              = User::where('email', '=', $data['email'])->first();
         if($check)
         {
             return redirect()->back()->withErrors(["L'email que vous avez insérer existe déjà !"]);
         }
 
-        $user           = new User();
-        $user->name     = $data['name'];
-        $user->email    = $data['email'];
-        $user->password = Hash::make($data['password']);
+        $user               = new User();
+        $user->name         = $data['name'];
+        $user->email        = $data['email'];
+        $user->password     = Hash::make($data['password']);
         $user->save();
 
-        $total          = new Total();
-        $total->id_user = $user->id;
-        $total->total   = 0;
+        $total              = new Total();
+        $total->id_user     = $user->id;
+        $total->montant     = 0;
+        $total->depense    = 0;
         $total->save();
 
         return view('success');

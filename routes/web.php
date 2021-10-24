@@ -32,6 +32,12 @@ Route::post('/login', [MainController::class, 'login'])->name('login');
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     Route::get('/', [DashboardController::class, 'main'])->name('dashboard');
     Route::get('/mes-revenus', [DashboardController::class, 'revenus'])->name('revenus');
+    Route::post('/mes-revenus', [DashboardController::class, 'revenusSave'])->name('revenus.post');
+    Route::get('/mes-dépenses', [DashboardController::class, 'depenses'])->name('depenses');
+    Route::get('/mes-approvisionnements', [DashboardController::class, 'approvisionnements'])->name('approvisionnements');
+    Route::get('/mes-sources', [DashboardController::class, 'sources'])->name('sources');
+    Route::post('/mes-sources', [DashboardController::class, 'sourcesSave'])->name('sources.post');
+    Route::get('/mes-projets', [DashboardController::class, 'projets'])->name('projets');
 });
 
 
