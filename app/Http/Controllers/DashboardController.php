@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\RedirectHandler;
 use App\Helpers\ModelHelper;
 use App\Helpers\RelationPaginator;
 use Illuminate\Http\Request;
@@ -11,11 +12,13 @@ class DashboardController extends Controller
     //
     private $relationPaginator;
     private $modelHelper;
+    private $redirector;
 
     public function __construct()
     {
         $this->relationPaginator    = new RelationPaginator();
         $this->modelHelper          = new ModelHelper();
+        $this->redirector           = new RedirectHandler();
     }
 
     public function main()
@@ -34,14 +37,7 @@ class DashboardController extends Controller
     {
         $data = $verb->except('_token');
         $save = $this->modelHelper->modelSave('Revenu', $data);
-        if($save)
-        {
-            return redirect()->back()->with('success', 'Le revenu à bien été enregistré');
-        }
-        else
-        {
-            return redirect()->back()->with('error', 'Une erreur est survenu, veuillez reéssayer plus tard');
-        }
+        return $this->redirector->redirect($save);
     }
 
     public function depenses()
@@ -66,14 +62,7 @@ class DashboardController extends Controller
     {
         $data = $verb->except('_token');
         $save = $this->modelHelper->modelSave('Source', $data);
-        if($save)
-        {
-            return redirect()->back()->with('success', 'La source de revenu à bien été enregistrée');
-        }
-        else
-        {
-            return redirect()->back()->with('error', 'Une erreur est survenu, veuillez reéssayer plus tard');
-        }
+        return $this->redirector->redirect($save);
     }
 
     public function projets()
@@ -81,8 +70,4 @@ class DashboardController extends Controller
         $projets = $this->relationPaginator->getUserRelationWithPagination('projets');
         return view('dashboard.projets', compact('projets'));
     }
-
-
-
-
 }
