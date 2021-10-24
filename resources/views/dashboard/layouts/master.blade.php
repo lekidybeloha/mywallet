@@ -180,10 +180,10 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
     @if(Session::has('success'))
-        toastr.success('Succès', "{{ Session::get('success') }}")
+        toastr.success("{{ Session::get('success') }}")
     @endif
     @if(Session::has('error'))
-        toastr.error('Erreur', "{{ Session::get('error') }}")
+        toastr.error("{{ Session::get('error') }}")
     @endif
 </script>
 
