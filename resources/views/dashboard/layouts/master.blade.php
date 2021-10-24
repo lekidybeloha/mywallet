@@ -11,7 +11,7 @@
     <link href="{{ asset('css/pace.min.css') }}" rel="stylesheet"/>
     <script src="{{ asset('js/pace.min.js') }}"></script>
     <!--favicon-->
-    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/app-logo.png') }}">
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- animate CSS-->
@@ -22,6 +22,7 @@
     <link href="{{ asset('css/sidebar-menu.css') }}" rel="stylesheet"/>
     <!-- Custom Style-->
     <link href="{{ asset('css/app-style.css') }}" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
 </head>
 
@@ -34,7 +35,7 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="{{ route('dashboard') }}">
-                <img src="{{ asset('img/logo.png') }}" class="logo-icon" alt="logo icon">
+                <img src="{{ asset('img/app-logo.png') }}" class="logo-icon" alt="logo icon">
                 <h5 class="logo-text">My Wallet</h5>
             </a>
         </div>
@@ -51,38 +52,38 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="{{ route('depenses') }}">
                     <i class="zmdi zmdi-shopping-cart"></i> <span>Mes dépenses</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="{{ route('approvisionnements') }}">
                     <i class="zmdi zmdi-shopping-cart-add"></i> <span>Mes approvisionnements</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="{{ route('sources') }}">
                     <i class="zmdi zmdi-shopping-cart-add"></i> <span>Mes sources de revenu</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="{{ route('projets') }}">
                     <i class="zmdi zmdi-view-agenda"></i> <span>Mes projets</span>
                 </a>
             </li>
             <li class="sidebar-header">Statistiques</li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="#">
                     <i class="zmdi zmdi-shopping-cart"></i> <span>Dépenses</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="#">
                     <i class="zmdi zmdi-money-box"></i> <span>Revenus</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('revenus') }}">
+                <a href="#">
                     <i class="zmdi zmdi-view-agenda"></i> <span>Projections</span>
                 </a>
             </li>
@@ -132,7 +133,16 @@
 
     <div class="content-wrapper">
         <div class="container-fluid">
-
+            <!--Notifications points -->
+            @if(!Auth::user()->sources->count())
+                <div class="card">
+                    <div class="card-body">
+                        <div class="icon" data-code="f1f8" data-name="info">
+                            <i class="zmdi zmdi-info"></i> <span>Vous n'avez pas encore indiquer une source de revenu, veuillez indiquer au moins une source</span>
+                        </div>
+                    </div>
+                </div>
+            @endif
             <!--Start Dashboard Content-->
             @yield('content')
             <!--End Dashboard Content-->
@@ -167,6 +177,15 @@
 <script src="{{ asset('js/sidebar-menu.js') }}"></script>
 <!-- Custom scripts -->
 <script src="{{ asset('js/app-script.js') }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    @if(Session::has('success'))
+        toastr.success('Succès', "{{ Session::get('success') }}")
+    @endif
+    @if(Session::has('error'))
+        toastr.error('Erreur', "{{ Session::get('error') }}")
+    @endif
+</script>
 
 @yield('scripts')
 
