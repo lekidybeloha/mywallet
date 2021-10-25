@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Auth;
 
 class RelationPaginator
 {
+    /**
+     * User Helpers to get data with pagination(default 20)
+     * @param $relation
+     * @return null
+     */
     public function getUserRelationWithPagination($relation)
     {
         if(!Auth::user()->$relation)

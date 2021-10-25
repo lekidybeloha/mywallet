@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Total extends Model
 {
     use HasFactory;
-
-    public function totals()
-    {
-        return $this->hasOne(User::class, 'id_user');
-    }
 }

@@ -15,15 +15,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Show main page
+ */
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+/**
+ * Show register page
+ */
 Route::get('/register', function () {
     return view('register');
 });
 
+/**
+ * Save user
+ */
 Route::post('/register', [MainController::class, 'register'])->name('register');
+
+/**
+ * Login attempt
+ */
 Route::post('/login', [MainController::class, 'login'])->name('login');
 
 /**
