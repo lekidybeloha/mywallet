@@ -79,7 +79,7 @@ class User extends Authenticatable
     }
 
     /**
-     * get all user approvsionnements
+     * Get all user approvsionnements
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function approvisionnements()
@@ -87,6 +87,10 @@ class User extends Authenticatable
         return $this->hasMany(Approvisionnement::class, 'id_user');
     }
 
+    /**
+     * Get all user projects
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function projets()
     {
         return $this->hasMany(Projet::class, 'id_user');

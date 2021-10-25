@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ModelHelper
 {
+    /**
+     * Helpers to save model value instead of adding multiple line in each controller to save data
+     * @param $model
+     * @param $fields
+     * @return mixed
+     */
     public function modelSave($model, $fields)
     {
         $fullName       = 'App\Models\\'.$model;

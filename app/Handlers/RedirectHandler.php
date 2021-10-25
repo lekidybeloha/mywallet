@@ -4,6 +4,11 @@ namespace App\Handlers;
 
 class RedirectHandler
 {
+    /**
+     * Redirector after a response
+     * @param $response
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function redirect($response)
     {
         if($response)
