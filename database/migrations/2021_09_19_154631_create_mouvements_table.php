@@ -20,7 +20,7 @@ class CreateMouvementsTable extends Migration
             $table->id();
             $table->integer('id_user');
             $table->integer('source');
-            $table->float('montant');
+            $table->double('montant');
             $table->timestamps();
         });
     }

@@ -15,3 +15,7 @@ Vous pouvez ainsi voir, projeter et améliorer la gestion de votre porte-monnaie
 - Bootstrap
 - <a href='https://pngtree.com/so/Orange'>Orange png from pngtree.com/</a> for logo
 - Design : “Dashtreme” by “CODERVENT” v2.2.3
+
+## Commands
+- php artisan command:revenu #permet de mettre à jour automatiquement tout les revenu des utilisateurs selons leurs
+dates d'approvisionnement

@@ -25,4 +25,23 @@ class ModelHelper
 
         return $save->save();
     }
+
+    public function modelUpdate($model, $fields, $id)
+    {
+        $fullName       = 'App\Models\\'.$model;
+        $save           = $fullName::find($id);
+
+        foreach($fields as $index => $one)
+        {
+            $save->$index = $one;
+        }
+
+        return $save->save();
+    }
+
+    public function modelDelete($model, $id)
+    {
+        $fullName       = 'App\Models\\'.$model;
+        return $fullName::find($id)->delete();
+    }
 }
