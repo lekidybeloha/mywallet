@@ -16,8 +16,8 @@ class CreateTotalsTable extends Migration
         Schema::create('totals', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
-            $table->float('montant');
-            $table->float('depense');
+            $table->double('montant');
+            $table->double('depense');
             $table->timestamps();
         });
     }

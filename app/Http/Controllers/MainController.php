@@ -29,7 +29,7 @@ class MainController extends Controller
         $total              = new Total();
         $total->id_user     = $user->id;
         $total->montant     = 0;
-        $total->depense    = 0;
+        $total->depense     = 0;
         $total->save();
 
         return view('success');

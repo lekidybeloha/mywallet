@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('sources') }}">
+                <a href="{{ route('mes-sources.index') }}">
                     <i class="zmdi zmdi-shopping-cart-add"></i> <span>Mes sources de revenu</span>
                 </a>
             </li>
@@ -134,6 +134,13 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <!--Notifications points -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="icon" data-code="f1f8" data-name="info">
+                        <i class="zmdi zmdi-info"></i> <span>Tous les chiffres qui sont exprimé ici sont en Ariary</span>
+                    </div>
+                </div>
+            </div>
             @if(!Auth::user()->sources->count())
                 <div class="card">
                     <div class="card-body">

@@ -18,7 +18,7 @@ class CreateRevenusTable extends Migration
             $table->integer('id_user');
             $table->string('nom');
             $table->text('description')->nullable();
-            $table->float('montant');
+            $table->double('montant');
             $table->integer('date_appro');
             $table->integer('id_source');
             $table->timestamps();

@@ -18,7 +18,7 @@ class CreateApprovisionnementsTable extends Migration
             $table->integer('id_user');
             $table->string('nom');
             $table->text('description')->nullable();
-            $table->float('montant');
+            $table->double('montant');
             $table->timestamps();
         });
     }

@@ -37,7 +37,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form method="post" action="{{ route('sources.post') }}">
+                    <form method="post" action="{{ route('mes-sources.store') }}">
                         @csrf
                         <div class="modal-body">
                             <div class="form-group">
