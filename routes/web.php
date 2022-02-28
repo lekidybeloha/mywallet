@@ -49,6 +49,7 @@ Route::post('/login', [MainController::class, 'login'])->name('login');
  */
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     Route::get('/', [DashboardController::class, 'main'])->name('dashboard');
+    Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
     Route::group(['prefix'  =>  'mes-revenus'], function (){
         Route::get('/', [RevenuController::class, 'index'])->name('revenus');

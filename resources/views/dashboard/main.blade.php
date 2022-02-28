@@ -6,8 +6,8 @@
             <div class="row row-group m-0">
                 <div class="col-12 col-lg-6 col-xl-3 border-light">
                     <div class="card-body">
-                        <h5 class="text-white mb-0">{{ Auth::User()->totals->montant }} <span class="float-right"><i class="fa fa-usd"></i></span></h5>
-                        <p class="mb-0 text-white small-font">Revenu total </p>
+                        <h5 class="text-white mb-0">{{ Auth::User()->totals->montant }} <span class="float-right">Ar</span></h5>
+                        <p class="mb-0 text-white small-font">Montant disponible </p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xl-3 border-light">

@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item"><i class="icon-power mr-2"></i> Se deconnecter</li>
+                        <li class="dropdown-item"><a href="{{ route('logout') }}"><i class="icon-power mr-2"></i> Se deconnecter</a> </li>
                     </ul>
                 </li>
             </ul>
