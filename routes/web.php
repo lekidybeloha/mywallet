@@ -49,6 +49,7 @@ Route::post('/login', [MainController::class, 'login'])->name('login');
  */
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     Route::get('/', [DashboardController::class, 'main'])->name('dashboard');
+    Route::post('/set-total', [DashboardController::class, 'setUserTotal'])->name('dashboard.set-total');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
     Route::group(['prefix'  =>  'mes-revenus'], function (){
