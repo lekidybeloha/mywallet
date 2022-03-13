@@ -176,6 +176,33 @@
     </footer>
     <!--End footer-->
 
+    <div class="modal fade" id="total_base" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog bg-primary" role="document">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mise en place du revenu de base</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="{{ route('dashboard.set-total') }}">
+                    <div class="modal-body">
+                        <label>Indiquez ici votre revenu actuel pour commencer à utiliser l'outils</label>
+                        @csrf
+                        <div class="form-group">
+                            <label for="nom">Montant</label>
+                            <input type="number" min="0" name="montant" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div><!--End wrapper-->
 
 <!-- Bootstrap core JavaScript-->
@@ -191,6 +218,9 @@
     @endif
     @if(Session::has('error'))
         toastr.error("{{ Session::get('error') }}")
+    @endif
+    @if(Auth::User()->is_first)
+        $('#total_base').modal('show')
     @endif
 </script>
 
