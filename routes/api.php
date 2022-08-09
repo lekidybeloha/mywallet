@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('zohosign')->group(function (){
-    Route::get('/', [MainController::class, 'callback'])->name('clients.zoho');
+    Route::post('/', [MainController::class, 'callback'])->name('clients.zoho');
 });
