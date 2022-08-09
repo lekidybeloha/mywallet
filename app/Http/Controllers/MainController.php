@@ -48,4 +48,9 @@ class MainController extends Controller
             return redirect()->back()->withErrors(["L'email ou mot de passe invalide !"]);
         }
     }
+    
+    public function callback(Request $verb)
+    {
+        Log::info("REQUEST", $verb->all());
+    }
 }
