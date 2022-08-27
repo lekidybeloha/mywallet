@@ -44,4 +44,10 @@ class ModelHelper
         $fullName       = 'App\Models\\'.$model;
         return $fullName::find($id)->delete();
     }
+
+    public function deleteRelation($model, $column, $value)
+    {
+        $fullName       = 'App\Models\\'.$model;
+        return $fullName::where($column, '=', $value)->delete();
+    }
 }

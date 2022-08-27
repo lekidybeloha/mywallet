@@ -79,7 +79,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Get all user approvsionnements
+     * Get all user approvisionnements
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function approvisionnements()

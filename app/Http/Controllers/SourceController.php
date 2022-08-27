@@ -41,4 +41,18 @@ class SourceController extends Controller
         $save = $this->modelHelper->modelSave('Source', $data);
         return $this->redirector->redirect($save);
     }
+
+    public function edit(Request $verb)
+    {
+        $data = $verb->except(['_token', '_method']);
+        $save = $this->modelHelper->modelUpdate('Source', $data, $verb->get('id'));
+        return $this->redirector->redirect($save);
+    }
+
+    public function delete(Request $verb)
+    {
+        $delete = $this->modelHelper->modelDelete('Source', $verb->get('id'));
+        $this->modelHelper->deleteRelation('Revenu', 'id_source', $verb->get('id'));
+        return $this->redirector->redirect($delete);
+    }
 }

@@ -71,6 +71,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (){
     });
 
     Route::resource('mes-sources', SourceController::class)->only(['index', 'store']);
+    Route::group(['prefix'  =>  'mes-sources'], function (){
+        Route::put('/', [SourceController::class, 'edit'])->name('sources.edit');
+        Route::delete('/', [SourceController::class, 'delete'])->name('sources.delete');
+    });
 
     Route::group(['prefix'  =>  'mes-projets'], function (){
         Route::get('/', [ProjetController::class, 'projets'])->name('projets');

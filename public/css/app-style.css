@@ -48,11 +48,6 @@ html {
 html{
   height: 100%;
 }
-
-
-@-ms-viewport {
-	width: device-width
-}
 body {
    	background-color: #000;
     font-family: 'Roboto', sans-serif;
@@ -77,12 +72,6 @@ select option {
 }
 
 ::-moz-placeholder {
-    color: #fff !important;
-    font-size: 13px;
-    opacity: .5 !important; /* Firefox */
-}
-
-:-ms-input-placeholder {
     color: #fff !important;
     font-size: 13px;
     opacity: .5 !important; /* Firefox */
@@ -698,13 +687,6 @@ body.bg-theme15 {
 
 
 .search-bar input::-moz-placeholder {
-    color: #fff !important;
-    font-size: 13px;
-    opacity: .5 !important; /* Firefox */
-}
-
-
-.search-bar input:-ms-input-placeholder {
     color: #fff !important;
     font-size: 13px;
     opacity: .5 !important; /* Firefox */
