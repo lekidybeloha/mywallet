@@ -170,7 +170,7 @@
     <footer class="footer">
         <div class="container">
             <div class="text-center">
-                Copyright © {{ date('Y') }} <a href="#">Lekidybeloha</a> - Design by Dashtreme Admin
+                Copyright © {{ date('Y') }} <a href="https://elkana-vinet.com">Elkana Vinet Dimbiniaina</a> - Design by Dashtreme Admin
             </div>
         </div>
     </footer>
@@ -191,7 +191,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="nom">Montant</label>
-                            <input type="number" min="0" name="montant" class="form-control" required>
+                            <input type="number" min="0" name="montant" step="0.01" class="form-control" required>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -36,7 +36,7 @@
                     {{ $errors->first() }}
                 </div>
             @endif
-            <p class="mt-5 mb-3 text-muted">Copyright © {{ date('Y') }} <a href="#">Lekidybeloha</a> - Design by Dashtreme Admin</p>
+            <p class="mt-5 mb-3 text-muted">Copyright © {{ date('Y') }} <a href="https://elkana-vinet.com">Elkana Vinet Dimbiniaina</a> - Design by Dashtreme Admin</p>
         </form>
     </div>
     </body>
