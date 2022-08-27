@@ -66,7 +66,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="nom">Nom</label>
-                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Ex: Salaire mensuel Upwork" required>
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Achat Nourriture" required>
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>

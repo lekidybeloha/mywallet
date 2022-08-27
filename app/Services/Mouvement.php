@@ -7,6 +7,9 @@ use App\Models\Total;
 
 class Mouvement
 {
+    /*
+     * Source : 0 -> Dépenses, 1 -> Approvisionnement
+     */
     public function move($id_user, $montant, $source = 0)
     {
         $move               = new Move();
